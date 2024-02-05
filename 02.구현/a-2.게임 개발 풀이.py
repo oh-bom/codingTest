@@ -8,12 +8,14 @@ for _ in range(n):
 visited=[[0]*m for _ in range(n)]
 dirs=[(-1,0),(0,1),(1,0),(0,-1)]
 
-visited[x][y]==1 #
+visited[x][y]=1 #
 
-result=0
+result=1
 turn_cnt=0
 
 while True:
+    
+    #회전
     temp-=1
     turn_cnt+=1
     
@@ -23,19 +25,7 @@ while True:
     dir=dirs[temp]
     nx=x+dir[0]
     ny=y+dir[1]
-
-
-    if turn_cnt==4:
-        nx=x-dir[0]
-        ny=y-dir[1]
-
-        if(data[nx][ny]==1):break #바다라 못가는 경우
-        
-        else:
-            x=nx
-            y=ny
-            #result+=1 뒤로 가는것이니 이미 방문했던 곳이다.
-            turn_cnt=0
+    print("next",nx,ny,turn_cnt)
 
     #회전 후 갈 수 있을때
     if(visited[nx][ny]==0 and data[nx][ny]==0):
@@ -46,6 +36,20 @@ while True:
 
         result+=1
         turn_cnt=0
+        continue
+
+    if turn_cnt==4:
+        nx=x-dir[0]
+        ny=y-dir[1]
+
+        if(data[nx][ny]==1):break #바다라 못가는 경우
+        
+        else:
+            x=nx
+            y=ny
+            if(visited[x][y]==0):result+=1 #한번만 뒤로 백하는게 아니라 여러번이면 필요한듯
+            turn_cnt=0
+    
 
 print(result)
         
