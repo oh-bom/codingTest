@@ -1,3 +1,8 @@
+'''
+내 풀이에서 잘못생각한 점
+: 자를 길이를 이진탐색으로 start,end만 정하면 되는데 길이자체가 array에 있어야 된다고 생각함
+'''
+
 n,target=map(int,input().split())
 
 arr=list(map(int,input().split()))
@@ -24,3 +29,5 @@ while start<=end:
         start=mid+1
 
 print(result)
+
+
