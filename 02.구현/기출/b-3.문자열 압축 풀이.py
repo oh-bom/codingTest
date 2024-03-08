@@ -11,17 +11,19 @@ def solution(s):
         cnt=1
 
         for j in range(step,len(s),step):
+            temp=s[j:j+step]
             #패턴 일치-> 압축 가능
-            if pattern==s[j:j+step]:cnt+=1
+            if pattern==temp:cnt+=1
 
             #패턴이 불일치 -> 압축 불가
             else:
                 compressed+=str(cnt)+pattern if cnt>=2 else pattern
 
                 #동일 step 사이즈의 패턴을 새로 지정후 다음 문자열부터 확인하기 위해 초기화
-                pattern=s[j:j+step]
+                pattern=temp
                 cnt=1
         
+        #남은 문자열 추가->예를 들어 10사이즈인데 step=4였으면 마지막 2개 문자열 
         compressed+=str(cnt)+pattern if cnt>=2 else pattern
 
         answer=min(answer,len(compressed))
