@@ -9,7 +9,6 @@ def rotation(key):
             result[j][n-i-1]=key[i][j]
     
     return result
-
 #자물쇠 중간부분이 모두 1인지 확인->2라면 겹치는 부분, 0이라면 열쇠가 들어오지 않음
 def check(new_lock):
     lock_length=len(new_lock)//3
