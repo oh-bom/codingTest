@@ -8,12 +8,12 @@ def possible(answer):
     for x,y,type in answer:
         if type==0:#기둥인 경우
             #바닥 위 or 다른 기둥 위 or 보랑 만날때 가능
-            if y==0 or [x,y-1,0] in answer or [x-1,y,1] in answer:return True
+            if y==0 or [x,y-1,0] in answer or [x-1,y,1] in answer or [x,y,1] in answer:continue
             else:return False
 
         elif type==1:#보인 경우
             #양옆이 보와 연결 or 한쪽이 기둥위일때
-            if ([x,y-1,0] in answer) or ([x-1,y,1] in answer and [x+1,y,1] in answer):return True
+            if [x,y-1,0] in answer or [x+1,y-1,0] in answer or ([x-1,y,1] in answer and [x+1,y,1] in answer):continue
             else: return False
 
 def solution(n,build_frame):
