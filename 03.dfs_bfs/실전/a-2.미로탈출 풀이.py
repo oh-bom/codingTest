@@ -6,7 +6,7 @@ for _ in range(n):
 
 from collections import deque
 
-def dfs(x,y,cnt):
+def bfs(x,y,cnt):
     q=deque()
     q.append((x,y,cnt))
 
@@ -29,4 +29,4 @@ def dfs(x,y,cnt):
                 q.append((nx,ny,cnt+1))
                 data[nx][ny]=0
         
-print(dfs(0,0,1))
+print(bfs(0,0,1))

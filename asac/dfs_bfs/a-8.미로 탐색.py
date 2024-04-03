@@ -42,8 +42,7 @@ def solution(data,n,m):
                 
             if nx==n-1 and nx==m-1:break
                 
-                
-                
+               
     print(distance)
     return distance[n-1][m-1]
 
