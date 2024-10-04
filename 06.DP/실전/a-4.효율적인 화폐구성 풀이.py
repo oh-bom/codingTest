@@ -5,7 +5,7 @@ for _ in range(n):
     money.append(int(input()))
 
 def solution(n,target,money):
-    dp=[10001]*(target+1)
+    dp=[10001]*(target+1) # 만들 수 있는 화폐 가치 범위
 
     dp[0]=0
 

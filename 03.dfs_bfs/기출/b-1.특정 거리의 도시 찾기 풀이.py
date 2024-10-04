@@ -14,15 +14,29 @@ for _ in range(m):
     graph[a].append(b)
 
 distance=[-1]*(n+1)
+q=deque([x]) #리스트에 요소 넣은 후 바로 초기화
 distance[x]=0
 
-q=deque([x]) #리스트에 요소 넣은 후 바로 초기화
-while q:
-    now=q.popleft()
+def solution(x):
+    
+    while q:
+        now=q.popleft()
 
-    for i in graph[now]:
-        if distance[i]==-1:#아직 방문하지 않은 경우
-            #어짜피 시작한 노드에서부터 방문한 것이 최단일테니 내 코드처럼 min을 확인할 필요x
-            #여기서는 min 확인대신 방문 체크를 통해 최소 거리를 구함
-            distance[i]=distance[now]+1
-            q.append(i)
+        for i in graph[now]:
+            if distance[i]==-1:#아직 방문하지 않은 경우
+                #어짜피 시작한 노드에서부터 방문한 것이 최단일테니 내 코드처럼 min을 확인할 필요x
+                #여기서는 min 확인대신 방문 체크를 통해 최소 거리를 구함
+                distance[i]=distance[now]+1
+                q.append(i)
+                
+    find=False
+    for i in range(1,n+1):
+        if (distance[i]==k):
+            print(i)
+            find=True
+            
+    if(find==False):print(-1)
+    
+solution(x)
+            
+

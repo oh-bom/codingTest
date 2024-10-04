@@ -2,7 +2,6 @@
 
 from collections import deque
 n, k = map(int, input().split())
-
 graph=[] #현재 상태 맵
 virus=[] #바이러스 정보 답는 리스트
 
@@ -15,7 +14,7 @@ for i in range(n):
     for j in range(n):
         if graph[i][j]!=0:
             # 바이러스 종류, 시간, 위치 x,y 삽입
-            virus.append(graph[i][j],0,i,j)
+            virus.append((graph[i][j],0,i,j))
 
 #정렬 후에 큐로 옮긴다
 virus.sort()

@@ -31,7 +31,7 @@ def dfs(i,now):
             dfs(i+1,int(now/nums[i]))
             div+=1
 
-dfs(1,nums[0])
+# dfs(1,nums[0])
 
 #중복 순열(product)사용 
             
@@ -42,9 +42,11 @@ operators=list(product(['+','-','*','/'],repeat=n-1))
 def calculate(nums,operators):
     min_value=int(1e9)
     max_value=int(-1e9)
-    result=nums[0]
     for operator in operators:
-        for i in range(1,len(nums)-1):
+        print(operator)
+        result=nums[0]
+    
+        for i in range(1,len(nums)):
             if operator=="+":
                 result+=nums[i]
             elif operator=="-":
