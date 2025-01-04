@@ -22,6 +22,3 @@ while arr:
             break
             
 print(answer)
-
-
-    
